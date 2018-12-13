@@ -186,7 +186,7 @@ testSocket = do
   node1 <- newNode "node1" :: IO (Node String String)
   node2 <- newNode "node2" :: IO (Node String String)
   sock <- newSocket 9999
-  sock2 <- newSocket 10000
+  sock2 <- newSocket 0
   listen sock 1
   connect sock2 (SockAddrInet 9999 (tupleToHostAddress (127,0,0,1)))
   (s, _) <- accept sock
